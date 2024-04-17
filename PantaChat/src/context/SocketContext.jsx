@@ -13,9 +13,9 @@ export const SocketContextProvider = ({ children }) => {
 	const [socket, setSocket] = useState(null);
 	const [onlineUsers, setOnlineUsers] = useState([]);
 	const user = useRecoilValue(userAtom);
-
+//"http://localhost:3000" for dev
 	useEffect(() => {
-		const socket = io("http://localhost:3000", {
+		const socket = io("/", {
 			query: {
 				userId: user?._id,
 			},
