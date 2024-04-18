@@ -45,16 +45,20 @@ app.use("/api/messages",messageRoutes)
 console.log("before if block")
 console.log(process.env.NODE_ENV)
 
-if (process.env.NODE_ENV==="production") {
-	app.use(express.static(path.join(__dirname, "PantaChat","dist")));
+if (process.env.NODE_ENV) {
+	app.use(express.static(path.join(__dirname, "PantaChat/dist")));
  console.log("inside production mode")
-}	// react app
+
+}	
+
+
+ // react app
 	app.get("*", (req, res) => {
 		res.sendFile(path.resolve(__dirname, "PantaChat", "dist", "index.html"));
 	});
 
   console.log("Current working directory:", __dirname);
-console.log("Resolved path:", path.resolve(__dirname, "PantaChat", "dist", "index.html"));
+
   console.log("after if block")
   console.log(process.env.NODE_ENV)
 
