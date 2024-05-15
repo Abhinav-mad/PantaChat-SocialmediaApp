@@ -25,6 +25,7 @@ function App() {
     <>  
     <Box position={"relative"} w='full'>
     <Container maxW="1000px">
+      <Header/>
      <Routes>
        <Route path='/' element={user ? <Home /> : <Navigate to='/auth' />}/>
        <Route path='/auth' element={!user ? <Auth /> : <Navigate to='/' />}/>
@@ -55,7 +56,7 @@ function App() {
      </Routes>
 
       </Container>
-      <Footer/>
+      {/* <Footer/> */}
 
       </Box>
     </>
