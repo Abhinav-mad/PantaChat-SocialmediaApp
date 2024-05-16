@@ -17,7 +17,7 @@ function Header() {
 
 	const setAuthScreen = useSetRecoilState(authScreenAtom);
 
-
+console.log("inside header")
 
 	//as={RouterLink} to={`/${user.username}`}
   return (
@@ -44,7 +44,7 @@ function Header() {
 			/> 
 {user && (  <Flex alignItems={"center"} gap={4}>
 					<Link as={RouterLink} to={`/${user.username}`} >   
-						<RxAvatar size={24} />
+						<RxAvatar size={24} color='green' />
 					</Link>
 
 					<Link as={RouterLink} to={`/chat`}>
